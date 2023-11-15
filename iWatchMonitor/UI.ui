@@ -1,0 +1,1020 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1511</width>
+    <height>1023</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1100</width>
+    <height>800</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>微软雅黑</family>
+    <pointsize>11</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>iWatch Monitor - by ZeekiChen</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>icon.ico</normaloff>icon.ico</iconset>
+  </property>
+  <property name="statusTip">
+   <string/>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="1,0">
+    <item>
+     <layout class="QVBoxLayout" name="plotLayout_1"/>
+    </item>
+    <item>
+     <widget class="QScrollArea" name="scrollArea">
+      <property name="minimumSize">
+       <size>
+        <width>270</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>288</width>
+         <height>980</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_7" stretch="0,0,0,0,0,0,1,0">
+        <item>
+         <widget class="QGroupBox" name="groupBox_3">
+          <property name="title">
+           <string>当前时间</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QLabel" name="label_time">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <family>微软雅黑</family>
+               <pointsize>24</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>00:00:00</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_date">
+             <property name="text">
+              <string>2022年1月9号 星期日</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox">
+          <property name="title">
+           <string>串口连接</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <widget class="QComboBox" name="comboBox_serialList">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>250</width>
+               <height>16777215</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout">
+             <item>
+              <widget class="QPushButton" name="pushButton_refreshSerialList">
+               <property name="maximumSize">
+                <size>
+                 <width>70</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>刷新</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_serialConnect">
+               <property name="maximumSize">
+                <size>
+                 <width>70</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>连接</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_serialDisconnect">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>70</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>断开</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_2">
+          <property name="title">
+           <string>闹钟设置</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
+             <item>
+              <widget class="QLabel" name="label">
+               <property name="text">
+                <string>模式：</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="comboBox_alarmMode">
+               <item>
+                <property name="text">
+                 <string>关闭</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>单次</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>每天</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>工作日</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>某一天</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_2">
+             <item>
+              <widget class="QTimeEdit" name="timeEdit_alarmTime">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="currentSection">
+                <enum>QDateTimeEdit::HourSection</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="spinBox_alarmDay">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="minimum">
+                <number>1</number>
+               </property>
+               <property name="maximum">
+                <number>31</number>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_setAlarm">
+               <property name="text">
+                <string>设置</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_4">
+          <property name="title">
+           <string>基础设置</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_5">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_5">
+             <item>
+              <widget class="QLabel" name="label_4">
+               <property name="text">
+                <string>1.自动对时</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_setTime">
+               <property name="text">
+                <string>对时</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_6">
+             <item>
+              <widget class="QLabel" name="label_7">
+               <property name="text">
+                <string>2.息屏时间/s</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSlider" name="slider_screentime">
+               <property name="maximum">
+                <number>30</number>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="tickPosition">
+                <enum>QSlider::NoTicks</enum>
+               </property>
+               <property name="tickInterval">
+                <number>0</number>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_1">
+               <property name="text">
+                <string>0</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_7">
+             <item>
+              <widget class="QLabel" name="label_9">
+               <property name="text">
+                <string>3.屏幕亮度</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSlider" name="slider_brightness">
+               <property name="minimum">
+                <number>1</number>
+               </property>
+               <property name="maximum">
+                <number>5</number>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="tickPosition">
+                <enum>QSlider::NoTicks</enum>
+               </property>
+               <property name="tickInterval">
+                <number>1</number>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_2">
+               <property name="text">
+                <string>1</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QGridLayout" name="gridLayout">
+             <item row="0" column="1">
+              <widget class="QCheckBox" name="checkBox_AWT">
+               <property name="text">
+                <string>抬腕唤醒</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QCheckBox" name="checkBox_inverse">
+               <property name="text">
+                <string>颜色反转</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QCheckBox" name="checkBox_keysound">
+               <property name="text">
+                <string>按键音</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QPushButton" name="pushButton_setConfig">
+               <property name="text">
+                <string>设置</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_5">
+          <property name="title">
+           <string>查看数据</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_9">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_9">
+             <item>
+              <widget class="QLabel" name="label_3">
+               <property name="text">
+                <string>选择数据：</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="comboBox_dataSelect">
+               <item>
+                <property name="text">
+                 <string>温度湿度气压</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>加速度与角速度</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>地磁</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>当日步数</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_5">
+             <property name="text">
+              <string>窗口宽度：</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_8">
+             <item>
+              <widget class="QSlider" name="slider_windowWidth">
+               <property name="minimum">
+                <number>100</number>
+               </property>
+               <property name="maximum">
+                <number>5000</number>
+               </property>
+               <property name="singleStep">
+                <number>50</number>
+               </property>
+               <property name="pageStep">
+                <number>50</number>
+               </property>
+               <property name="sliderPosition">
+                <number>100</number>
+               </property>
+               <property name="tracking">
+                <bool>true</bool>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="invertedAppearance">
+                <bool>false</bool>
+               </property>
+               <property name="tickPosition">
+                <enum>QSlider::NoTicks</enum>
+               </property>
+               <property name="tickInterval">
+                <number>0</number>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_6">
+               <property name="text">
+                <string>100</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_10">
+             <item>
+              <widget class="QPushButton" name="pushButton_startOrPause">
+               <property name="maximumSize">
+                <size>
+                 <width>70</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>开始</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_clearData">
+               <property name="maximumSize">
+                <size>
+                 <width>70</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>清除数据</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_saveData">
+               <property name="maximumSize">
+                <size>
+                 <width>70</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>保存数据</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_6">
+          <property name="title">
+           <string>蓝牙设置</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_6">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_13">
+             <item>
+              <widget class="QLabel" name="label_8">
+               <property name="text">
+                <string>BLE名称：</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_2">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="checkBox_BLEswitch">
+               <property name="text">
+                <string>开关</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_14" stretch="1,0">
+             <item>
+              <widget class="QLineEdit" name="lineEdit_BLEName"/>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_setBLE">
+               <property name="text">
+                <string>设置</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_11">
+             <item>
+              <widget class="QLabel" name="label_10">
+               <property name="text">
+                <string>SPP名称：</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="checkBox_SPPswitch">
+               <property name="text">
+                <string>开关</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_12" stretch="1,0">
+             <item>
+              <widget class="QLineEdit" name="lineEdit_SPPName"/>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_setSPP">
+               <property name="text">
+                <string>设置</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_11">
+             <property name="font">
+              <font>
+               <family>微软雅黑</family>
+               <pointsize>11</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>重启蓝牙后生效</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>198</width>
+            <height>58</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_12">
+          <property name="text">
+           <string>b站泽凯陈，UID:8973287</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton_serialConnect</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>serialConnect()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1257</x>
+     <y>213</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>687</x>
+     <y>152</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_refreshSerialList</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>refreshSerialList()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1175</x>
+     <y>213</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>665</x>
+     <y>205</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_serialDisconnect</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>serialDisconnect()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1339</x>
+     <y>213</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>780</x>
+     <y>115</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_dataSelect</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>setPlotDisplay()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1347</x>
+     <y>775</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>810</x>
+     <y>756</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>slider_screentime</sender>
+   <signal>sliderMoved(int)</signal>
+   <receiver>label_1</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1332</x>
+     <y>429</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1347</x>
+     <y>429</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>slider_brightness</sender>
+   <signal>sliderMoved(int)</signal>
+   <receiver>label_2</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1332</x>
+     <y>459</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1347</x>
+     <y>459</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_setAlarm</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>serialSendCmd()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1347</x>
+     <y>323</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>542</x>
+     <y>649</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_setTime</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>serialSendCmd()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1347</x>
+     <y>399</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>542</x>
+     <y>613</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_setConfig</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>serialSendCmd()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1347</x>
+     <y>525</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>539</x>
+     <y>576</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_alarmMode</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>setAlarmMode()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1347</x>
+     <y>287</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>694</x>
+     <y>489</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_clearData</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>dataClear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1257</x>
+     <y>867</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>594</x>
+     <y>731</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_saveData</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>dataSave()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1339</x>
+     <y>867</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>961</x>
+     <y>771</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_startOrPause</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>serialSendCmd()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1175</x>
+     <y>867</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>542</x>
+     <y>687</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_dataSelect</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>serialSendCmd()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1347</x>
+     <y>775</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>432</x>
+     <y>738</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>slider_windowWidth</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>label_6</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1314</x>
+     <y>831</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1347</x>
+     <y>831</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>slider_windowWidth</sender>
+   <signal>sliderReleased()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>setWindowWidth()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1314</x>
+     <y>831</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>506</x>
+     <y>766</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_setBLE</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>serialSendCmd()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1304</x>
+     <y>620</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>571</x>
+     <y>956</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_setSPP</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>serialSendCmd()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1329</x>
+     <y>689</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>623</x>
+     <y>911</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_BLEswitch</sender>
+   <signal>released()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>serialSendCmd()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1317</x>
+     <y>582</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>706</x>
+     <y>861</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_SPPswitch</sender>
+   <signal>released()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>serialSendCmd()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1322</x>
+     <y>655</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>794</x>
+     <y>825</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>refreshSerialList()</slot>
+  <slot>serialConnect()</slot>
+  <slot>serialDisconnect()</slot>
+  <slot>setPlotDisplay()</slot>
+  <slot>serialSendCmd()</slot>
+  <slot>setAlarmMode()</slot>
+  <slot>dataClear()</slot>
+  <slot>dataSave()</slot>
+  <slot>setWindowWidth()</slot>
+ </slots>
+</ui>
